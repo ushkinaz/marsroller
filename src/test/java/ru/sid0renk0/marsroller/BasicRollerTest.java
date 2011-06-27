@@ -12,6 +12,7 @@ public class BasicRollerTest {
   @Before
   public void setUp() throws Exception {
     roller = new BasicRoller(new Position(1, 1), Direction.NORTH);
+    roller.attachToSurface(new FlatSurface(1027, 768));
   }
 
   @Test

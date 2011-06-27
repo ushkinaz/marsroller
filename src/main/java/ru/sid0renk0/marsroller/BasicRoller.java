@@ -13,6 +13,8 @@ public class BasicRoller implements Roller {
 
   @Override
   public void forward() throws OutOfSurfaceException {
+    assert surface != null;
+
     position = surface.move(position, direction, 1);
   }
 
