@@ -3,8 +3,13 @@ package ru.sid0renk0.marsroller;
 public class BasicRoller implements Roller {
 
   private Position position;
+  private Direction direction;
 
-  private int y;
+  public BasicRoller(Position position, Direction direction) {
+    this.position = position;
+    this.direction = direction;
+  }
+
   @Override
   public void forward() {
   }

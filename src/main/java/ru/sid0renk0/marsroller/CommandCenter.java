@@ -19,13 +19,13 @@ public class CommandCenter {
    * @return added roller
    */
   public Roller addRoller() {
-    //Adding factory would be better, but then it would break " the test is only 25-lines of code" promise.
-    BasicRoller roller = new BasicRoller();
+    //Adding factory would be better, but then it would break "the test is only 25-lines of code" promise.
+    BasicRoller roller = new BasicRoller(new Position(1, 1), Direction.NORTH);
     rollers.add(roller);
     return roller;
   }
 
-  public void moveRoller(Roller roller, String sequence){
+  public void moveRoller(Roller roller, String sequence) {
 
   }
 
