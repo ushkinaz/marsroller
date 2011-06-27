@@ -25,15 +25,16 @@ public class Stories {
     roller.forward();
   }
 
-  @Test(expected = OutOfSurfaceException.class)
+  @Test
   public void testSecond() throws Exception {
     roller.forward();
     roller.turnLeft();
     roller.turnLeft();
     roller.forward();
+    assertThat(roller.getPosition(), is(new Position(1, 1)));
   }
 
-  @Test
+  @Test(expected = OutOfSurfaceException.class)
   public void testThird() throws Exception {
     roller.forward();
     roller.forward();
@@ -42,6 +43,5 @@ public class Stories {
     roller.forward();
     roller.turnLeft();
     roller.forward();
-    assertThat(roller.getPosition(), is(new Position(4, 2)));
   }
 }

@@ -21,6 +21,7 @@ public class CommandCenter {
   public Roller addRoller() {
     //Adding factory would be better, but then it would break "the test is only 25-lines of code" promise.
     BasicRoller roller = new BasicRoller(new Position(1, 1), Direction.NORTH);
+    roller.attachToSurface(surface);
     rollers.add(roller);
     return roller;
   }
