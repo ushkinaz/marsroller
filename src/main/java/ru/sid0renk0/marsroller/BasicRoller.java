@@ -1,6 +1,6 @@
 package ru.sid0renk0.marsroller;
 
-public class DieselRoller implements Roller {
+public class BasicRoller implements Roller {
 
   private Position position;
 
