@@ -23,4 +23,11 @@ public interface Roller {
    */
   Position getPosition();
 
+  /**
+   * Gets facing direction.
+   *
+   * @return direction
+   */
+  Direction getDirection();
+
 }
