@@ -16,8 +16,9 @@ public class Surface {
   }
 
   public void validatePosition(Position position) throws OutOfSurfaceException {
-
-
+    if (position.getX() > width || position.getY() > height) {
+      throw new OutOfSurfaceException("Out of bounds");
+    }
   }
 
 }
