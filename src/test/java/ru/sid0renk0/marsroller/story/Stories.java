@@ -14,7 +14,7 @@ public class Stories {
 
   @Before
   public void setUp() throws Exception {
-    center = new CommandCenter(new Surface(4, 4));
+    center = new CommandCenter(new FlatSurface(4, 4));
     roller = center.addRoller();
   }
 

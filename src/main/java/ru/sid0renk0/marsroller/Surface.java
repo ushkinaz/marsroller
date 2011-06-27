@@ -1,24 +1,15 @@
 package ru.sid0renk0.marsroller;
 
+public interface Surface {
 
-/**
- * Surface is a flat plane with given dimensions. Coordinates start with 1.
- */
-public class Surface {
-  private int width;
-  private int height;
-
-  public Surface(int width, int height) {
-    assert width > 0;
-    assert height > 0;
-    this.width = width;
-    this.height = height;
-  }
-
-  public void validatePosition(Position position) throws OutOfSurfaceException {
-    if (position.getX() > width || position.getY() > height) {
-      throw new OutOfSurfaceException("Out of bounds");
-    }
-  }
-
+  /**
+   * Move virtual position from initialPosition in given direction, by given number of points
+   *
+   * @param initialPosition initial position
+   * @param direction       facing direction
+   * @param units           units
+   * @return new position
+   * @throws OutOfSurfaceException if new position is not valid
+   */
+  Position move(Position initialPosition, Direction direction, int units) throws OutOfSurfaceException;
 }

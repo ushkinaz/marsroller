@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(Parameterized.class)
-public class SurfaceParametrizedTest {
+public class FlatSurfaceParametrizedTest {
   private static final int SIZE = 4;
-  private Surface surface;
+  private FlatSurface surface;
 
   private final int x;
   private final int y;
 
-  public SurfaceParametrizedTest(int x, int y) {
+  public FlatSurfaceParametrizedTest(int x, int y) {
     this.x = x;
     this.y = y;
   }
@@ -35,23 +35,8 @@ public class SurfaceParametrizedTest {
 
   @Before
   public void setUp() throws Exception {
-    surface = new Surface(SIZE, SIZE);
+    surface = new FlatSurface(SIZE, SIZE);
   }
-
-/*
-  @Test(expected = AssertionError.class)
-  public void testInitialize() throws Exception {
-    new Surface(-1, 0);
-  }
-*/
-
-/*
-  @Test(expected = OutOfSurfaceException.class)
-  public void testValidatePositionNegative() throws Exception {
-    surface.validatePosition(new Position(SIZE + 1, 1));
-  }
-
-*/
 
   @Test
   public void testValidatePosition() throws Exception {

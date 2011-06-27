@@ -25,7 +25,7 @@ public class CommandCenter {
     return roller;
   }
 
-  public void moveRoller(Roller roller, String sequence) {
+  public void moveRoller(Roller roller, CharSequence sequence) {
 
   }
 
