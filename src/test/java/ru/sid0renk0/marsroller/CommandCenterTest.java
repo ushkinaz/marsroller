@@ -3,9 +3,12 @@ package ru.sid0renk0.marsroller;
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 public class CommandCenterTest {
   private CommandCenter commandCenter;
@@ -28,9 +31,16 @@ public class CommandCenterTest {
   }
 
   @Test
+  /**
+   * White box testing. Because I can.
+   */
   public void testMoveRoller() throws Exception {
-//    Roller roller;
-//
-//    commandCenter.moveRoller(roller, "");
+    Roller roller = Mockito.mock(Roller.class);
+
+    commandCenter.moveRoller(roller, "flr");
+
+    verify(roller, times(1)).forward();
+    verify(roller, times(1)).turnLeft();
+    verify(roller, times(1)).turnRight();
   }
 }
