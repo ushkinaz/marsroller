@@ -1,6 +1,6 @@
 package ru.sid0renk0.marsroller;
 
-public class OutOfSurfaceException extends Exception{
+public class OutOfSurfaceException extends RollerException {
   public OutOfSurfaceException() {
   }
 
