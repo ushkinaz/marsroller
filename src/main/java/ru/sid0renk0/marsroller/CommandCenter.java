@@ -91,7 +91,7 @@ public class CommandCenter {
 
         if (!(line.equals("quit"))) {
           moveRoller(roller, line);
-          System.out.println("Roller:" + roller);
+          System.out.println("Roller state:" + roller);
         }
       }
     } catch (IOException e) {
