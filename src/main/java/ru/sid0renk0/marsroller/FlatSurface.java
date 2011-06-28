@@ -50,4 +50,14 @@ public class FlatSurface implements Surface {
     validatePosition(wouldBePosition);
     return wouldBePosition;
   }
+
+  @Override
+  public String toString() {
+    final StringBuilder sb = new StringBuilder();
+    sb.append("FlatSurface");
+    sb.append("{width=").append(width);
+    sb.append(", height=").append(height);
+    sb.append('}');
+    return sb.toString();
+  }
 }

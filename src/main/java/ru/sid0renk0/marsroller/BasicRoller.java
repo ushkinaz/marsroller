@@ -1,6 +1,11 @@
 package ru.sid0renk0.marsroller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class BasicRoller implements Roller {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(BasicRoller.class);
 
   private Position position;
   private Direction direction;
@@ -15,17 +20,21 @@ public class BasicRoller implements Roller {
   public void forward() throws OutOfSurfaceException {
     assert surface != null;
 
+    LOGGER.debug("Moving forward");
+
     position = surface.move(position, direction, 1);
   }
 
   @Override
   public void turnLeft() {
     direction = direction.nextCounterClockWise();
+    LOGGER.debug("Turning left");
   }
 
   @Override
   public void turnRight() {
     direction = direction.nextClockWise();
+    LOGGER.debug("Turning right");
   }
 
   @Override
