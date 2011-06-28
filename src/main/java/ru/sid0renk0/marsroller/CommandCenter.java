@@ -1,9 +1,17 @@
 package ru.sid0renk0.marsroller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.Set;
 
 public class CommandCenter {
+  private static final Logger LOGGER = LoggerFactory.getLogger(CommandCenter.class);
+
   private Surface surface;
 
   private Set<Roller> rollers;
@@ -66,9 +74,32 @@ public class CommandCenter {
 
 
   /**
-   * Control
+   * Control from keyboard
    */
   public void startControlling() {
+    Roller roller = addRoller();
+    String line = "";
 
+    System.out.println("Enter command line (type 'quit' to exit): ");
+    InputStreamReader converter = new InputStreamReader(System.in);
+    BufferedReader in = new BufferedReader(converter);
+
+
+    try {
+      while (!(line.toLowerCase().equals("quit"))) {
+        line = in.readLine().toLowerCase();
+
+        if (!(line.equals("quit"))) {
+          moveRoller(roller, line);
+          System.out.println("Roller:" + roller);
+        }
+      }
+    } catch (IOException e) {
+      LOGGER.error("IOException", e);
+    } catch (IncorrectCommandException e) {
+      LOGGER.warn("Incorrect user detected", e);
+    } catch (OutOfSurfaceException e) {
+      LOGGER.warn("Never test boundaries of your world", e);
+    }
   }
 }
