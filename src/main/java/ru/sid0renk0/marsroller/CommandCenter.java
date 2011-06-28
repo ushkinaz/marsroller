@@ -80,13 +80,13 @@ public class CommandCenter {
     Roller roller = addRoller();
     String line = "";
 
-    System.out.println("Enter command line (type 'quit' to exit): ");
     InputStreamReader converter = new InputStreamReader(System.in);
     BufferedReader in = new BufferedReader(converter);
 
 
     try {
       while (!(line.toLowerCase().equals("quit"))) {
+        System.out.println("Enter command line (type 'quit' to exit): ");
         line = in.readLine().toLowerCase();
 
         if (!(line.equals("quit"))) {
