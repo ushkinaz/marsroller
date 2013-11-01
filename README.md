@@ -1,14 +1,16 @@
 ReadMe for marsroller
 
-= Purpose
-Testing my OOP/OOD skills, proper exception handling, TDD and other core software development skills.
+MarsRoller was a simple assignment given to me at one interview
 
-= Build instructions
+## Purpose
+Showcasing my OOP/OOD skills, proper exception handling, TDD and other core software development skills
+
+## Build instructions
 
 Run `mvn clean package appassembler:assemble`
 
 
-= Running the app
+## Running the app
 
 ```
 cd target/appassembler/bin
